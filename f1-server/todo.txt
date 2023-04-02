@@ -1,0 +1,5 @@
+new model (details)
+new app lvl folder : components -> driver-list
+new component: driver details : request get id 1 -> insert into app component.ts
+
+(deploy : vercel)

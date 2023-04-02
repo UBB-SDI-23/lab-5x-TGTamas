@@ -1,0 +1,8 @@
+<p>driver-list works!</p>
+
+<div *ngFor = "let driver of drivers">
+    {{ driver.firstName }}
+    {{ driver.lastName }}
+    <button (click)="getDetails(driver.id)">Details</button>
+
+</div>
