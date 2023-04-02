@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DriverDetails } from 'src/app/models';
 import { DriverService } from 'src/app/services/driver-service/driver.service';
 
@@ -11,10 +12,11 @@ export class DriverDetailsComponent implements OnInit{
 
     public driver? : DriverDetails
 
-    public constructor(private readonly driverService : DriverService) {}
+    public constructor(private readonly driverService : DriverService, private readonly route : ActivatedRoute) {}
 
     ngOnInit(): void {
-        this.driverService.getById(1).subscribe(
+        const id = Number.parseInt(this.route.snapshot.paramMap.get('id')!);
+        this.driverService.getById(id).subscribe(
             driver => this.driver = driver
         )
     }

@@ -8,21 +8,20 @@ import { DriverListItem } from '../../models';
     templateUrl: './driver-list.component.html',
     styleUrls: ['./driver-list.component.scss']
 })
-export class DriverListComponent implements OnInit {
+export class DriverListComponent {
     public drivers: DriverListItem[] = []
     
     public constructor(private readonly driverService : DriverService) {}
 
-    ngOnInit(): void {
+    public getAll() {
         this.driverService.getAll().subscribe(
             drivers => this.drivers = drivers
         )
     }
 
-    public getDetails(id : number) : void {
-        this.driverService.getById(id).subscribe(
-            driver => console.log(driver)
+    public orderByFoundation() {
+        this.driverService.orderByFoundation().subscribe(
+            drivers => this.drivers = drivers
         )
     }
-
 }

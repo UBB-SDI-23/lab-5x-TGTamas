@@ -3,6 +3,10 @@
 <div *ngFor = "let driver of drivers">
     {{ driver.firstName }}
     {{ driver.lastName }}
-    <button (click)="getDetails(driver.id)">Details</button>
+    <button [routerLink]="''+driver.id">Details</button>
 
 </div>
+
+<div> <button (click) = "getAll()"> Get all drivers </button> </div>
+
+<div> <button (click) = "orderByFoundation()"> Get all drivers sorted by their teams's foundation year </button> </div>

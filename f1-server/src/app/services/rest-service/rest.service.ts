@@ -11,7 +11,7 @@ export class RestService {
 
   constructor(private readonly http : HttpClient) { }
 
-  public getAll<T>(getAllWhat : string) : Observable<T[]> {
+  public get<T>(getAllWhat : string) : Observable<T[]> {
     return this.http.get(`http://localhost:8080/${getAllWhat}`) as Observable<T[]>
   }
 

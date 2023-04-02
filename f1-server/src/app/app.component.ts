@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent{
 
-	
-
 	title = 'f1-server';
 }
