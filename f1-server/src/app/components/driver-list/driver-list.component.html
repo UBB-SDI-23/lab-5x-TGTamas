@@ -1,12 +1,14 @@
-<p>driver-list works!</p>
 
-<div *ngFor = "let driver of drivers">
+<div *ngFor = "let driver of drivers; let i = index">
     {{ driver.firstName }}
     {{ driver.lastName }}
     <button [routerLink]="''+driver.id">Details</button>
+    <button (click) = "deleteByIndex(i)">Delete</button>
 
 </div>
 
 <div> <button (click) = "getAll()"> Get all drivers </button> </div>
 
-<div> <button (click) = "orderByFoundation()"> Get all drivers sorted by their teams's foundation year </button> </div>
+<div> <button (click) = "orderByFoundation()"> Get all drivers ordered by their teams's foundation year </button> </div>
+
+<div> <button (click) = "sortByFirstName()"> Sort drivers (by first name) </button> </div>

@@ -24,4 +24,14 @@ export class DriverListComponent {
             drivers => this.drivers = drivers
         )
     }
+
+    public deleteByIndex(index : number) {
+        this.driverService.delete(this.drivers[index].id).subscribe(()=>this.drivers.splice(index, 1))
+    }
+
+    public sortByFirstName() {
+        this.driverService.sortByFirstName().subscribe(
+            drivers => this.drivers = drivers
+        )
+    }
 }

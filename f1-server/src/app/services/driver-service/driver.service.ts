@@ -23,4 +23,12 @@ export class DriverService {
   public orderByFoundation() : Observable<DriverListItem[]> {
     return this.restService.get(`${this.resource}/orderByFoundation`)
   }
+
+  public delete(id : number) : Observable<never> {
+    return this.restService.delete(this.resource, id);
+  }
+
+  public sortByFirstName() : Observable<DriverListItem[]> {
+    return this.restService.sort(this.resource, "firstName")
+  }
 }
