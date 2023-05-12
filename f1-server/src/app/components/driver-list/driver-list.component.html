@@ -1,14 +1,17 @@
+<div fxLayout="column" fxLayoutGap="16px">
+    <div *ngFor="let driver of drivers; let i = index" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+        {{ driver.firstName }}
+        {{ driver.lastName }}
+        <button [routerLink]="''+driver.id">Details</button>
+        <button (click)="deleteByIndex(i)">Delete</button>
 
-<div *ngFor = "let driver of drivers; let i = index">
-    {{ driver.firstName }}
-    {{ driver.lastName }}
-    <button [routerLink]="''+driver.id">Details</button>
-    <button (click) = "deleteByIndex(i)">Delete</button>
+    </div>
+
+    <div> <button (click)="getAll()"> Get all drivers </button> </div>
+
+    <div> <button (click)="orderByFoundation()"> Get all drivers ordered by their teams's foundation year </button>
+    </div>
+
+    <div> <button (click)="sortByFirstName()"> Sort drivers (by first name) </button> </div>
 
 </div>
-
-<div> <button (click) = "getAll()"> Get all drivers </button> </div>
-
-<div> <button (click) = "orderByFoundation()"> Get all drivers ordered by their teams's foundation year </button> </div>
-
-<div> <button (click) = "sortByFirstName()"> Sort drivers (by first name) </button> </div>

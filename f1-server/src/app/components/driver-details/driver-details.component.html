@@ -1,12 +1,12 @@
-
-
-<div>
-    {{driver?.id}} <br>
-    {{driver?.firstName}}
-    {{driver?.lastName}} <br>
-    {{driver?.age}} <br>
-    {{driver?.nationality}} <br>
-    {{driver?.team?.id}} 
-    {{driver?.team?.name}} <br>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px">
+    <div>
+        {{driver?.id}} <br>
+        {{driver?.firstName}}
+        {{driver?.lastName}} <br>
+        {{driver?.age}} <br>
+        {{driver?.nationality}} <br>
+        {{driver?.team?.id}}
+        {{driver?.team?.name}} <br>
+    </div>
     <button [routerLink]="'/'">Back</button>
 </div>
