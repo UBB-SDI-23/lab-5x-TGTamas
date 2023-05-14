@@ -10,7 +10,7 @@ export class RestService {
 
   constructor(private readonly http : HttpClient) { }
 
-  ip : string = "http://13.50.231.202"
+  ip : string = "http://localhost"
 
   public get<T>(getAllWhat : string) : Observable<T[]> {
     return this.http.get(`${this.ip}/${getAllWhat}`) as Observable<T[]>
